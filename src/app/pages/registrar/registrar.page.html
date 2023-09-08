@@ -1,0 +1,30 @@
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>Crea tu cuenta</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content [fullscreen]="true">
+    <div class="container">
+      <ion-list>
+        <ion-item>
+          <ion-input [(ngModel)]="rut" label="Rut: " labelPlacement="stacked"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input [(ngModel)]="nombre" label="Nombres: " labelPlacement="stacked"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input [(ngModel)]="apellido" label="Apellidos: " labelPlacement="stacked"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input [(ngModel)]="correo" label="Correo: " labelPlacement="stacked"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input [(ngModel)]="contrasena1" label="Contraseña: " labelPlacement="stacked"></ion-input>
+        </ion-item>
+        <ion-item>
+        <ion-input [(ngModel)]="contrasena2" label="Confirme contraseña: " labelPlacement="stacked"></ion-input>
+        </ion-item>
+      </ion-list>
+    </div>
+    <ion-button (click)="registrar()" color="secondary" shape="round">Registrarse</ion-button>
+  </ion-content>

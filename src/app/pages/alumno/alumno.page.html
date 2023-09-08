@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button class="btn_volver" (click)="volver()" color="secondary" slot="start">
+      <ion-icon name="arrow-back-circle-outline"></ion-icon>
+    </ion-button>
+  <ion-button (click)="cerrarSesion()" color="secondary" slot="end">
+  Cerrar Sesión</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card color="secondary">
+    <div class="container">
+     
+      
+        <h1>Nombre del alumno</h1>
+        <ion-avatar slot="end">
+          <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        </ion-avatar>
+        <br>
+        <h1>Carrera</h1>
+      
+    </div>
+  </ion-card>
+</ion-content>

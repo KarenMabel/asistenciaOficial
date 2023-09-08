@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+   
+    <ion-button (click)="cerrarSesion()" color="secondary" slot="end">
+      Cerrar Sesión
+    </ion-button>
+   
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <h5 class="bienvenido">¡Bienvenido!</h5>
+  <h1 class="menu1">Menú</h1>
+ 
+  <ion-card (click)="scan()" class="cardOne" color="secondary">
+    <ion-card-header>
+      <ion-card-title>Escanear código QR</ion-card-title>
+      <ion-card-subtitle></ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content> </ion-card-content>
+  </ion-card>
+  <br>
+  <ion-card (click)="reporte()" class="cardTwo" color="secondary">
+    <ion-card-header>
+      <ion-card-title>Reporte de asistencia</ion-card-title>
+      <ion-card-subtitle></ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content></ion-card-content>
+  </ion-card>
+  <br>
+  <ion-card (click)="alumno()" class="cardThree" color="secondary">
+    <ion-card-header>
+      <ion-card-title>Información Alumno</ion-card-title>
+      <ion-card-subtitle></ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content></ion-card-content>
+  </ion-card>
+  <ion-button (click)="play()">Play</ion-button>
+  <ion-button (click)="pause()">Pause</ion-button>
+  <ion-button (click)="stop()">Stop</ion-button>
+ 
+</ion-content>s

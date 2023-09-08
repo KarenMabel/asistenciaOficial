@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Asistencia Duoc</ion-card-title>
+      <h6>¡Bienvenido!</h6>
+
+    </ion-card-header>
+
+    <ion-card-content>
+      <div class="log">
+        <ion-input  [(ngModel)]="usuario" label="Usuario: " label-placement="floating" fill="outline" placeholder="Ingrese usuario"></ion-input>
+        <br />
+        <ion-input  [(ngModel)]="contrasena" type="password" label="Contraseña" label-placement="floating" fill="outline" placeholder="Ingrese Contraseña"></ion-input>
+      </div>
+      <br />
+      <div class="btn">
+        <ion-button (click)="Login()" color="secondary" shape="round">Ingresar</ion-button>
+      </div>
+      <br />
+      <br />
+      <div class="crear">
+        <h6 (click)="registrar()"><u>Registrarse</u></h6>
+
+      </div>
+      
+      <div class="restContrasena">
+        <h6 (click)="restablecerContrasena()"><u>Restablecer contraseña</u></h6>
+      </div>
+
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

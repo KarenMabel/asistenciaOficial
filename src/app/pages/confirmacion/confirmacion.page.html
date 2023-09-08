@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button class="btn_volver" (click)="volver()" color="secondary" slot="start">
+      <ion-icon name="arrow-back-circle-outline"></ion-icon>
+    </ion-button>
+  <ion-button (click)="cerrarSesion()" color="secondary" slot="end">
+  Cerrar Sesión</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card color="secondary">
+    <ion-card-title>¡Su asistencia fue registrada correctamente!</ion-card-title>
+    <br>
+    <div class="container">
+      <h3>Asignatura:</h3>
+      <h3>Docente:</h3>
+      <h3>Sala:</h3>
+      <h3>Fecha:</h3>
+    </div>
+    
+
+
+  </ion-card>
+
+</ion-content>

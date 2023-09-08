@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button class="btn_volver" (click)="volver()" color="secondary" slot="start">
+      <ion-icon name="arrow-back-circle-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card color="secondary" *ngFor="let i of ramosArray">
+
+    <h1>{{i.asignatura}}</h1>
+    <h3>{{i.id}}</h3>
+
+
+
+  </ion-card>
+</ion-content>
