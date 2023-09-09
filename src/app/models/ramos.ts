@@ -6,4 +6,6 @@ export interface ramos{
     fecha:string;
     hora:number;
     url:string;
+    disable?:boolean;
+
 }

@@ -8,12 +8,18 @@
 
 <ion-content [fullscreen]="true">
 
-  <ion-card color="secondary" *ngFor="let i of ramosArray">
+  <ion-card routerLink="/asignatura" color="secondary" *ngFor="let i of ramosArray">
 
     <h1>{{i.asignatura}}</h1>
     <h3>{{i.id}}</h3>
+    <ng-container *ngIf="loading">
+      <div class="box-skeleton" *ngFor="let m of [1,2,3]">
+        <ion-skeleton-text [animated]="true" class="skeleton"></ion-skeleton-text>
+      </div>
+    </ng-container>
 
 
 
   </ion-card>
+  
 </ion-content>

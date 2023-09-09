@@ -1,13 +1,26 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>asignatura</ion-title>
+    <ion-button class="btn_volver" (click)="volver()" color="secondary" slot="start">
+      <ion-icon name="arrow-back-circle-outline"></ion-icon>
+    </ion-button>
+  <ion-button (click)="cerrarSesion()" color="secondary" slot="end">
+  Cerrar Sesión</ion-button>
+    
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">asignatura</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
+  <ion-card color="secondary" *ngFor="let i of ramosArray">
+    <ng-container *ngIf="i.disable">
+
+    <h1>{{i.asignatura}}</h1>
+    <h3>{{i.id}}</h3>
+    <h3>{{i.profesor}}</h3>
+    <h3>{{i.sala}}</h3>
+    <h3>{{i.fecha}}</h3>
+  </ng-container>
+
+  </ion-card>
+ 
 </ion-content>

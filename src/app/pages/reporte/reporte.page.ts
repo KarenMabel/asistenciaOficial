@@ -10,11 +10,13 @@ import { ramos } from 'src/app/models/ramos';
 export class ReportePage implements OnInit {
 
   ramosArray:ramos[]=[];
+  loading:boolean = true;
 
   constructor(private router: Router) { }
 
   ngOnInit() {
     this.infoRamos();
+    setTimeout(()=> {this.loading = false},1000)
   }
 
   infoRamos(){
@@ -26,7 +28,7 @@ export class ReportePage implements OnInit {
         profesor:"Camilo Muñoz",
         fecha:"",
         hora:0,
-        url:""
+        url:"/reporte"
     },
     {
       id:"CSY4111",
@@ -35,7 +37,7 @@ export class ReportePage implements OnInit {
       profesor:"Guillermo Villacura",
       fecha:"",
       hora:0,
-      url:"" 
+      url:"/reporte" 
     },
     {
       id:"MAT4140",
@@ -44,7 +46,7 @@ export class ReportePage implements OnInit {
         profesor:"Claudio Sarmiento",
         fecha:"",
         hora:0,
-        url:""
+        url:"/reporte"
     }
     )
   }
@@ -52,5 +54,8 @@ export class ReportePage implements OnInit {
   volver(){
     this.router.navigateByUrl("menu");
   }
+  //asignatura(){
+    //this.router.navigateByUrl("asignatura");
+  //}
 
 }

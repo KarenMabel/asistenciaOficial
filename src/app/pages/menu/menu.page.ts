@@ -19,6 +19,8 @@ export class MenuPage implements OnInit {
 
   private animation!: Animation;
 
+  loading:boolean = true;
+
 
 
   constructor(private router: Router,
@@ -26,9 +28,13 @@ export class MenuPage implements OnInit {
               private helper:HelperService) { }
 
   ngOnInit() {
+   
+    
   }
 
   ngAfterViewInit() {
+   
+    
     const card = this.animationCtrl
     .create()
     .addElement(document.querySelectorAll("ion-card"))
@@ -45,14 +51,16 @@ export class MenuPage implements OnInit {
       { offset: 0, transform: 'scale(1)' },
       { offset: 0.5, transform: 'scale(1.5)' },
       { offset: 1, transform: 'scale(1)' },
+      
     ]);
+  
 
   this.animation = this.animationCtrl.create().duration(2000).addAnimation([card]);
 }
 
   play() {
-    this.animation.play();
-  }
+  this.animation.play();
+}
 
   pause() {
     this.animation.pause();
@@ -91,3 +99,6 @@ export class MenuPage implements OnInit {
 
 
 }
+
+
+

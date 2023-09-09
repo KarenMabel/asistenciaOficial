@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
+import { HelperService } from 'src/app/services/helper.service';
 
 @Component({
   selector: 'app-restablecer',
@@ -11,19 +12,20 @@ export class RestablecerPage implements OnInit {
   correo: string = "";
 
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private helper: HelperService) { }
 
   ngOnInit() {
   }
 
-  btnRestablecer() {
+  async btnRestablecer() {
 
     if(this.correo ==""){
       alert("Debe ingresar un correo válido.");
       return;
     }else{
       this.router.navigateByUrl('login');
-    alert("te envíamos un correo electrónico");
+    await this.helper.showAlert("te envíamos un correo electrónico", "infomación");
     return;
 
     }
