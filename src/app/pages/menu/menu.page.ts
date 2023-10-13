@@ -1,9 +1,10 @@
 import { Component,ElementRef,OnInit, ViewChildren } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AnimationController, IonCard } from '@ionic/angular';
 import type { QueryList } from '@angular/core';
 import type { Animation } from '@ionic/angular';
 import { HelperService } from 'src/app/services/helper.service';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 
 
@@ -20,16 +21,24 @@ export class MenuPage implements OnInit {
   private animation!: Animation;
 
   loading:boolean = true;
+  usuario: string="";
 
 
 
   constructor(private router: Router,
               private animationCtrl: AnimationController,
-              private helper:HelperService) { }
+              private helper:HelperService,
+              private activated:ActivatedRoute,
+              private auth:AngularFireAuth) { }
 
   ngOnInit() {
-   
+    this.usuario=this.activated.snapshot.params["nombreUsuario"];
     
+  }
+
+  ionViewWillEnter(){
+    this.play();
+        
   }
 
   ngAfterViewInit() {
@@ -73,6 +82,7 @@ export class MenuPage implements OnInit {
   async cerrarSesion(){
     var salir = await this.helper.showConfirm("¿Desea cerrar sesión?","Salir","Cancelar");
     if(salir == true){
+      await this.auth.signOut();
       this.router.navigateByUrl("login");
     }
   
@@ -99,6 +109,8 @@ export class MenuPage implements OnInit {
 
 
 }
+
+
 
 
 
