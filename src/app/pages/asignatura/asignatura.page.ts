@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HelperService } from 'src/app/services/helper.service';
 import { ramos } from 'src/app/models/ramos';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
   selector: 'app-asignatura',
@@ -13,7 +14,8 @@ export class AsignaturaPage implements OnInit {
   ramosArray:ramos[]=[];
 
   constructor(private router:Router,
-              private helper:HelperService) { }
+              private helper:HelperService,
+              private auth: AngularFireAuth) { }
 
   ngOnInit() {
     this.infoRamos();
@@ -58,6 +60,7 @@ export class AsignaturaPage implements OnInit {
   async cerrarSesion(){
     var salir = await this.helper.showConfirm("¿Desea cerrar sesión?","Salir","Cancelar");
     if(salir == true){
+      await this.auth.signOut();
       this.router.navigateByUrl("login");
     }
   }

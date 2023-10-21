@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HelperService } from 'src/app/services/helper.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -12,10 +13,12 @@ export class LoginPage implements OnInit {
 
   usuario: string = "";
   contrasena: string = "";
+  
 
   constructor(private router: Router,
               private helper: HelperService,
-              private auth: AngularFireAuth) { }
+              private auth: AngularFireAuth,
+              private loaderController:LoadingController) { }
 
   ngOnInit() {
   }
@@ -32,11 +35,6 @@ export class LoginPage implements OnInit {
       return;
     }
 
-    //if(this.usuario == "pgy4121-001d" && this.contrasena == "pgy4121-001d") {
-      //this.router.navigateByUrl('menu/'+ this.usuario);
-    //}else{
-      //await this.helper.showAlert("Usuario o contraseña inconrrectos.", "información")
-    //}
     try{
       const req = await this.auth.signInWithEmailAndPassword(this.usuario,this.contrasena);
       await this.router.navigateByUrl('menu/'+this.usuario);
@@ -44,10 +42,12 @@ export class LoginPage implements OnInit {
     }catch(error:any) {
 
     if(error.code == 'auth/invalid-email'){
+      await this.loaderController.dismiss();
       await this.helper.showAlert("Correo invalido","Error")
     }
 
     if(error.code == 'auth/invalid-password'){
+      await this.loaderController.dismiss();
       await this.helper.showAlert("contraseña incorrecta","Error")
     }
 
@@ -55,13 +55,13 @@ export class LoginPage implements OnInit {
 
   }
 
-  restablecerContrasena() {
-    this.router.navigateByUrl('restablecer');
+  async restablecerContrasena() {
+    await this.router.navigateByUrl('restablecer');
     return;
   }
 
-  registrar() {
-    this.router.navigateByUrl('registrar');
+  async registrar() {
+    await this.router.navigateByUrl('registrar');
     return;
   }
 

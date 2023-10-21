@@ -52,10 +52,8 @@ export class ReportePage implements OnInit {
   }
 
   volver(){
-    this.router.navigateByUrl("menu");
+    this.router.navigateByUrl("menu/:nombreUsuario");
   }
-  //asignatura(){
-    //this.router.navigateByUrl("asignatura");
-  //}
+
 
 }

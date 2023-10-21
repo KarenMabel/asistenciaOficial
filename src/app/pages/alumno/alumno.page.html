@@ -10,16 +10,14 @@
 
 <ion-content [fullscreen]="true">
 
-  <ion-card color="secondary">
+  <ion-card *ngFor="let e of alumnoFiltro" color="secondary">
     <div class="container">
      
       
-        <h1>Nombre del alumno: Elvis Teck</h1>
+        <h1>{{ e.correo }}</h1>
         <ion-avatar slot="end">
           <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
         </ion-avatar>
-        <br>
-        <h1>Carrera: Analista programador</h1>
       
     </div>
   </ion-card>

@@ -5,6 +5,7 @@ import type { QueryList } from '@angular/core';
 import type { Animation } from '@ionic/angular';
 import { HelperService } from 'src/app/services/helper.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { StorageService } from 'src/app/services/storage.service';
 
 
 
@@ -29,11 +30,12 @@ export class MenuPage implements OnInit {
               private animationCtrl: AnimationController,
               private helper:HelperService,
               private activated:ActivatedRoute,
-              private auth:AngularFireAuth) { }
+              private auth:AngularFireAuth,
+              private storage:StorageService) { }
 
   ngOnInit() {
     this.usuario=this.activated.snapshot.params["nombreUsuario"];
-    
+    this.helper.showToast("Recuerda mantener el 75% de asistencia para evitar R.I.",5000);
   }
 
   ionViewWillEnter(){

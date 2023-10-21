@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button class="btn_volver" (click)="cerrar()" color="secondary" slot="end">
+      <ion-icon name="close-circle-outline"></ion-icon>
+    </ion-button>
+   
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card *ngFor="let g of dataQr" color="secondary">
+    <ion-card-title>¡Su asistencia fue registrada correctamente!</ion-card-title>
+    <h3>{{g.asignatura}}</h3>
+    <h3>{{g.sala}}</h3>
+    <h3>{{g.docente}}</h3>
+ 
+    
+
+
+  </ion-card>
+
+</ion-content>

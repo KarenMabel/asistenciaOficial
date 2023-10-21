@@ -25,6 +25,7 @@
     "@capacitor/core": "^5.4.1",
     "@capacitor/preferences": "^5.0.6",
     "@ionic/angular": "^7.0.0",
+    "capacitor-barcode-scanner": "github:RuedaDeRepuesto/capacitor-barcode-scanner",
     "firebase": "^10.4.0",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
