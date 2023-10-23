@@ -8,22 +8,12 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
- 
-   
-      <ion-card color="secondary">
-        <h1>------------------</h1>
-        <h1>|                |</h1>
-        <h1>|                |</h1>
-        <h1>|                |</h1>
-        <h1>|                |</h1>
-        <h1>|                |</h1>
-        <h1>------------------</h1>
-      </ion-card>
-      
- 
-  
+  <!-- borre el dibujito -->
+  <div>
+    <ion-button (click)="scanear()" class="btn_scan" color="secondary" shape="round">Scan</ion-button>
+  </div>
 </ion-content>
-  <ion-button (click)="scanear()" class="btn_scan" color="secondary" shape="round">Scan</ion-button>
-<ion-card color="secondary">
+
+  <ion-card color="secondary">
   <h1>Escanea el código QR para registrar tu asistencia</h1>
 </ion-card>

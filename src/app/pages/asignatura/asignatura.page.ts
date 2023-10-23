@@ -66,7 +66,7 @@ export class AsignaturaPage implements OnInit {
   }
 
   volver(){
-    this.router.navigateByUrl("menu");
+    this.router.navigateByUrl("menu/:nombreUsuario");
   }
 
 }

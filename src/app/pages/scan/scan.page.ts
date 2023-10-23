@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { BarcodeScanner } from 'capacitor-barcode-scanner';
 import { StorageService } from 'src/app/services/storage.service';
 import { ConfirmacionPage } from 'src/app/modal/confirmacion/confirmacion.page';
@@ -29,7 +29,6 @@ export class ScanPage implements OnInit {
     }
 
     const paramatro = {dataQr:scanQr};
-
     await this.helper.showModal(ConfirmacionPage,paramatro);
   }
 
