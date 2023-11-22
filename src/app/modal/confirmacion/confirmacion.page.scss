@@ -6,3 +6,23 @@ ion-card-title{
     text-align: center;
 
 }
+ion-toolbar{
+    --background: #1D5D9B;
+}
+ion-content{
+    --background: #FBEEAC;
+}
+ion-card{
+    background-color:   #75C2F6;
+    text-align: center;
+    margin-top: 100px;
+    color:white;
+    width: auto;
+    font-family: letras;
+}
+ion-img{
+    width: 500px;
+    height: 50px;
+    margin-right: 5000px;
+    margin-left: 1px;
+}

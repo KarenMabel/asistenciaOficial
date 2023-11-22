@@ -1,11 +1,49 @@
 ion-title{
     text-align: center;
     color:white;
-    background-color: #86cde0;
+    font-size: xx-large;
+   
 }
 
 ion-list{
+    font-family: letras;
     font-size:20px;
     color:#8d9090;
 }
+ion-toolbar{
+    --background: #1D5D9B;
+    font-family: letras;
+    
+}
 
+.btn_volver{
+    margin-top: 5px;
+    height: 10px;
+    width: 60px;
+}
+ion-icon{
+    width: 100px;
+}
+ion-content{
+    --background: #FBEEAC;
+}
+ion-input{
+    font-family: letras;
+    font-size: large;
+    color:#8d9090;
+    
+}
+ion-select{
+    font-family: letras;
+    font-size: large;
+    color:#8d9090;
+    
+}
+.container{
+    --background: #FBEEAC;
+}
+
+.btn_registrar{
+    font-family: letras;
+    text-align: center;
+}

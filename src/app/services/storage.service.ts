@@ -77,7 +77,7 @@ export class StorageService {
         Asistencias.push(f);
       }
     }
-    this.setItem(keyStorageUsuario, JSON.stringify(Asistencias));
+    this.setItem(keyStorageAsistencia, JSON.stringify(Asistencias));
 
   }
 

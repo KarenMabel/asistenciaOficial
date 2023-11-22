@@ -1,16 +1,24 @@
 .bienvenido{
+    font-family: letras;
+    font-size: x-large;
     text-align: left;
     color:#8d9090;
 }
 
 .cardOne{
+    background-color:   #75C2F6;
+    font-family: letras;
+    font-size: x-large;
     text-align: center;
     margin-left: 100px;
     margin-right: 100px;
-    margin-top: 100px;
+    margin-top: 80px;
 }
 
 .cardTwo{
+    background-color:   #75C2F6;
+    font-family: letras;
+    font-size: x-large;
     text-align: center;
     margin-left: 100px;
     margin-right: 100px;
@@ -19,6 +27,9 @@
 
 
 .cardThree{
+    background-color:   #75C2F6;
+    font-family: letras;
+    font-size: x-large;
     text-align: center;
     margin-left: 100px;
     margin-right: 100px;
@@ -26,7 +37,25 @@
 }
 
 .menu1{
+    margin-top: 50px;
+    font-family: letras;
     text-align: center;
     font-size: xx-large;
     color:#8d9090
+}
+ion-toolbar{
+    --background: #1D5D9B;
+}
+ion-content{
+    --background: #FBEEAC;
+}
+ion-button{
+    font-family: letras;
+
+}
+ion-img{
+    width: 500px;
+    height: 50px;
+    margin-right: 300px;
+    //margin-left: 10px;
 }

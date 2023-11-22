@@ -1,9 +1,29 @@
+ion-toolbar{
+    --background: #1D5D9B;
+}
+ion-content{
+    --background: #FBEEAC;
+}
 ion-card{
-    text-align: center;
     margin-top: 100px;
-    margin-left: auto;
-    margin-right: auto;
+    font-family: letras;
+    background-color:   #75C2F6;
+    text-align: center;
+}
+ion-img{
+    width: 500px;
+    height: 50px;
+    margin-right: 5000px;
+    margin-left: 1px;
 }
 .container{
     text-align: center;
+}
+ion-button{
+    font-family: letras;
+}
+.img_person{
+    width: 50px;
+    height: 50px;
+    
 }

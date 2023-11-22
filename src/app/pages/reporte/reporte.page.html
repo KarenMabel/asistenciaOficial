@@ -3,15 +3,22 @@
     <ion-button class="btn_volver" (click)="volver()" color="secondary" slot="start">
       <ion-icon name="arrow-back-circle-outline"></ion-icon>
     </ion-button>
+ <ion-img src="/assets/img/vivo douc.png"></ion-img>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
 
-  <ion-card routerLink="/asignatura" color="secondary" *ngFor="let i of ramosArray">
+  <ion-card routerLink="/asignatura" color="secondary" *ngFor="let i of asistencia">
 
-    <h1>{{i.asignatura}}</h1>
-    <h3>{{i.id}}</h3>
+    <h3>Asignatura: {{i.asignatura}}</h3>
+    <h3>Docente: {{i.docente}}</h3>
+    <h3>Fecha: {{i.fecha}}</h3>
+    <h3>Hora: {{i.hora}}</h3>
+    <h3>Lección: {{i.leccion}}</h3>
+    <h3>Sala: {{i.sala}}</h3>
+    <h3>Sección: {{i.seccion}}</h3>
+    
     <ng-container *ngIf="loading">
       <div class="box-skeleton" *ngFor="let m of [1,2,3]">
         <ion-skeleton-text [animated]="true" class="skeleton"></ion-skeleton-text>

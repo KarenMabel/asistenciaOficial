@@ -4,6 +4,8 @@ import { HelperService } from 'src/app/services/helper.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 
+
+
 @Component({
   selector: 'app-alumno',
   templateUrl: './alumno.page.html',
@@ -11,7 +13,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 })
 export class AlumnoPage implements OnInit {
 
-  parametroAlumno:string | undefined;
+ // parametroAlumno:string | undefined;
   alumno:any;
   alumnoFiltro:any;
   
@@ -23,12 +25,18 @@ export class AlumnoPage implements OnInit {
 
   ngOnInit() {
     this.mostrarUsuario();
+    
 
   }
 
-  async mostrarUsuario(){
+    async mostrarUsuario(){
     this.alumno = await this.storage.getUser();
-    var tokenAlumno = await this.auth.currentUser;
+    const tokenAlumno = await this.auth.currentUser;
+    console.log("token",tokenAlumno?.email);
+
+
+   
+    
     this.alumnoFiltro = this.alumno.filter((e: { correo:string; }) => e.correo == tokenAlumno?.email);
     
   }

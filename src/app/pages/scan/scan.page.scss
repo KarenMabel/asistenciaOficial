@@ -1,17 +1,32 @@
 ion-card{
-    
+    font-family: letras;
+    background-color:   #75C2F6;
     text-align: center;
 }
 .btn_scan{
+    font-family: letras;
     text-align: center;
-    //margin-left: 600px;
-    //margin-right: 600px;
-    // pusiste mucho px
+    margin-left: 300px;
+    margin-top: 200px;
+    
 }
-
+ion-toolbar{
+    --background: #1D5D9B;
+}
+ion-content{
+    --background: #FBEEAC;
+}
+ion-img{
+    width: 500px;
+    height: 50px;
+    margin-left: 30px;
+}
 
 
 
 .btn_volver{
+    margin-top: 5px;
+    height: 10px;
+    width: 60px;
     text-align: center;
 }

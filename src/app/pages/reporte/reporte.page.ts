@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ramos } from 'src/app/models/ramos';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-reporte',
@@ -9,46 +9,21 @@ import { ramos } from 'src/app/models/ramos';
 })
 export class ReportePage implements OnInit {
 
-  ramosArray:ramos[]=[];
+  asistencia:any;
   loading:boolean = true;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private storage:StorageService) { }
 
   ngOnInit() {
     this.infoRamos();
+    
     setTimeout(()=> {this.loading = false},1000)
   }
 
-  infoRamos(){
-    this.ramosArray.push(
-      {
-        id:"ASY4131",
-        asignatura:"ARQUITECTURA",
-        sala:"L6",
-        profesor:"Camilo Muñoz",
-        fecha:"",
-        hora:0,
-        url:"/reporte"
-    },
-    {
-      id:"CSY4111",
-      asignatura:"CALIDAD DE SOFTWARE",
-      sala:"L4",
-      profesor:"Guillermo Villacura",
-      fecha:"",
-      hora:0,
-      url:"/reporte" 
-    },
-    {
-      id:"MAT4140",
-        asignatura:"ESTADISTICA DESCRIPTIVA",
-        sala:"L3",
-        profesor:"Claudio Sarmiento",
-        fecha:"",
-        hora:0,
-        url:"/reporte"
-    }
-    )
+  async infoRamos(){
+   this.asistencia = await this.storage.getAsistencia();
+    
   }
 
   volver(){

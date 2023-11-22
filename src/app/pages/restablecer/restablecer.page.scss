@@ -1,9 +1,10 @@
 ion-card{
-    background-color:   #86cde0;
+    background-color:   #75C2F6;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 120px;
     color:white;
     width: auto;
+    font-family: letras;
     
 }
 ion-card-header{
@@ -12,4 +13,27 @@ ion-card-header{
 }
 ion-card-title{
     color: white ;
+}
+ion-button{
+    font-family: letras;
+}
+ion-input{
+    font-family: letras;
+}
+ion-content{
+    --background: #FBEEAC;
+}
+ion-toolbar{
+    font-family: letras;
+    font-size: xx-large;
+    text-align: center;
+    --background: #1D5D9B;
+}
+.btn_volver{
+    margin-top: 5px;
+    height: 10px;
+    width: 60px;
+}
+ion-title{
+    color: white;
 }

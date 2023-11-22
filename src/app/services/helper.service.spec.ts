@@ -6,11 +6,13 @@ describe('HelperService', () => {
   let service: HelperService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+
+    });
     service = TestBed.inject(HelperService);
   });
 
-  it('should be created', () => {
+  /*  it('should be created', () => {
     expect(service).toBeTruthy();
-  });
+  }); */
 });

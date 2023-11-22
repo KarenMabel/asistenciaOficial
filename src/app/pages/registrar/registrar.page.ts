@@ -53,7 +53,7 @@ export class RegistrarPage implements OnInit {
        this.comunas = reque.data;
        this.disabledComuna = false;
     }catch(error:any){
-       await this.helper.showAlert(".","Error");
+       await this.helper.showAlert(error.error.msg,"Error");
      }
   }
 
@@ -123,6 +123,7 @@ export class RegistrarPage implements OnInit {
       if(error.code == 'auth/email-alredy-in-use'){
         await this.loaderController.dismiss();
         await this.helper.showAlert("Correo ya registrado","Error");
+        
       }
 
       if(error.code == 'auth/weak-password'){
@@ -135,18 +136,19 @@ export class RegistrarPage implements OnInit {
         await this.helper.showAlert("El correo no es válido","Error");
       }
 
-      if(error.code == 'Auth/user-not-found'){
+      if(error.code == 'auth/user-not-found'){
         await this.loaderController.dismiss();
         await this.helper.showAlert("Usuario no encontrado","Error");
+       
       }
 
       if(error.code == 'auth/wrong-password'){
         await this.loaderController.dismiss();
         await this.helper.showAlert("La contraseña ingresada no es válida","Error");
       }
-
+      return;
     }
-    return;
+    
     
   }
 

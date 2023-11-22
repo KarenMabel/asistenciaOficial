@@ -1,6 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-button class="btn_volver" (click)="cerrar()" color="secondary" slot="end">
+    <ion-img src="/assets/img/vivo douc.png"></ion-img>
+    <ion-button class="btn_volver" (click)="cerrarModal()" color="secondary" slot="end">
       <ion-icon name="close-circle-outline"></ion-icon>
     </ion-button>
    
@@ -9,15 +10,14 @@
 
 <ion-content [fullscreen]="true">
 
-  <ion-card *ngFor="let g of dataQr" color="secondary">
-    <ion-card-title>¡Su asistencia fue registrada correctamente!</ion-card-title>
-    <h3>{{g.asignatura}}</h3>
-    <h3>{{g.sala}}</h3>
-    <h3>{{g.docente}}</h3>
- 
-    
+<ion-card *ngFor="let i of dataQr" color="secondary">
+  <h3>Asignatura: {{i.asignatura}}</h3>
+  <h3>Docente: {{i.docente}}</h3>
+  <h3>Fecha: {{i.fecha}}</h3>
+  <h3>Hora: {{i.hora}}</h3>
+  <h3>Lección: {{i.leccion}}</h3>
+  <h3>Sala: {{i.sala}}</h3>
+  <h3>Sección: {{i.seccion}}</h3>
 
-
-  </ion-card>
-
+</ion-card>
 </ion-content>

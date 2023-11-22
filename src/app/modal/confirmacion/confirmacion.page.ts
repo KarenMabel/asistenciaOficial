@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { StorageService } from 'src/app/services/storage.service';
+import { HelperService } from 'src/app/services/helper.service';
 import { Router } from '@angular/router';
-import { scan } from 'rxjs';
 
 @Component({
   selector: 'app-confirmacion',
@@ -12,29 +12,44 @@ import { scan } from 'rxjs';
 export class ConfirmacionPage implements OnInit {
 
   @Input() dataQr:any[]=[];
+  datos:any[]=[];
+  public correoUsuario : string ="";
 
-
+  
   constructor(
               private modalController: ModalController,
               private storage:StorageService,
+              private helper:HelperService,
               private router:Router) { }
 
   ngOnInit() {
-    this.storage.getAsistencia();
+   //this.datos.push(this.dataQr);
+   this.confirmar();
+   
+  
+  
+  } 
+  async confirmar(){
+    var confirmar = await this.helper.showConfirm("¿Desea registrar asistencia?","Aceptar","Cancelar");
+    if(confirmar == true){
+      await this.storage.keepAsistencia(this.dataQr);
+      console.log("222",this.dataQr);
+      this.modalController.dismiss();
+    return;
+    }else{
+      this.modalController.dismiss();
+    }
+
+    
   }
 
   
-
- 
-
+  
   cerrarModal(){
     this.modalController.dismiss();
   }
 
-  cerrar(){
-    this.router.navigateByUrl("scan");
-  }
-
+  
 
 
   
