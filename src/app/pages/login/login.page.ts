@@ -25,12 +25,16 @@ export class LoginPage implements OnInit {
 
   async Login() {
 
+    const loader = await this.helper.showLoader("Cargando");
+
     if(this.usuario == "") {
+      await loader.dismiss();
       await this.helper.showAlert("Debe ingresar usuario.", "información");
       return;
     }
 
     if(this.contrasena == "") {
+      await loader.dismiss();
       await this.helper.showAlert("Debe ingresar contraseña.", "información");
       return;
     }
@@ -38,40 +42,39 @@ export class LoginPage implements OnInit {
     try{
       const req = await this.auth.signInWithEmailAndPassword(this.usuario,this.contrasena);
       await this.router.navigateByUrl('menu/'+this.usuario);
-
+      await loader.dismiss();
     }catch(error:any) {
-      //this.helper.showAlert(error.msg,"Error");
+      
+      
 
       if(error.code == 'auth/email-alredy-in-use'){
-        await this.loaderController.dismiss();
+        await loader.dismiss();
         await this.helper.showAlert("Correo ya registrado","Error");
         
       }
 
       if(error.code == 'auth/weak-password'){
-        await this.loaderController.dismiss();
+        await loader.dismiss();
         await this.helper.showAlert("La contraseña no alcanza el mínimo de caracteres requeridos","Error"); 
       }
 
       if(error.code == 'auth/invalid-email'){
-        await this.loaderController.dismiss();
+        await loader.dismiss();
         await this.helper.showAlert("El correo no es válido","Error");
       }
 
       if(error.code == 'auth/user-not-found'){
-        await this.loaderController.dismiss();
+        await loader.dismiss();
         await this.helper.showAlert("Usuario no encontrado","Error");
        
       }
 
       if(error.code == 'auth/wrong-password'){
-        await this.loaderController.dismiss();
+        await loader.dismiss();
         await this.helper.showAlert("La contraseña ingresada no es válida","Error");
       }
       return;
     }
-    
-
   
 
   }

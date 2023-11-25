@@ -8,7 +8,6 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { StorageService } from 'src/app/services/storage.service';
 
 
-
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.page.html',
@@ -23,9 +22,7 @@ export class MenuPage implements OnInit {
 
   loading:boolean = true;
   usuario: string="";
-
-
-
+  
   constructor(private router: Router,
               private animationCtrl: AnimationController,
               private helper:HelperService,
@@ -95,7 +92,7 @@ export class MenuPage implements OnInit {
   }
 
   reporte(){
-    this.router.navigateByUrl("reporte");
+    this.router.navigateByUrl("reporte/:nombreUsuario");
 
   }
 
@@ -105,7 +102,7 @@ export class MenuPage implements OnInit {
 
 
 
- 
+  
 
 
 

@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
 })
 export class LocationService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   async obtenerRegion(){
     return await lastValueFrom(this.http.get<apiRest<Region>>(`${environment.apiUrl}region`));

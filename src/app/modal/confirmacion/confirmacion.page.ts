@@ -23,36 +23,23 @@ export class ConfirmacionPage implements OnInit {
               private router:Router) { }
 
   ngOnInit() {
-   //this.datos.push(this.dataQr);
-   this.confirmar();
-   
-  
+    this.confirmar();
   
   } 
+
   async confirmar(){
     var confirmar = await this.helper.showConfirm("¿Desea registrar asistencia?","Aceptar","Cancelar");
     if(confirmar == true){
       await this.storage.keepAsistencia(this.dataQr);
-      console.log("222",this.dataQr);
       this.modalController.dismiss();
     return;
     }else{
       this.modalController.dismiss();
-    }
-
-    
+    } 
   }
 
-  
-  
   cerrarModal(){
     this.modalController.dismiss();
   }
-
-  
-
-
-  
-
 }
 

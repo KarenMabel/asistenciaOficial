@@ -4,7 +4,7 @@ ion-card{
     margin-top: 120px;
     color:white;
     width: auto;
-    font-family: letras;
+    font-family: donuts;
     
 }
 ion-card-header{
@@ -15,16 +15,16 @@ ion-card-title{
     color: white ;
 }
 ion-button{
-    font-family: letras;
+    font-family: donuts;
 }
 ion-input{
-    font-family: letras;
+    font-family: donuts;
 }
 ion-content{
     --background: #FBEEAC;
 }
 ion-toolbar{
-    font-family: letras;
+    font-family: donuts;
     font-size: xx-large;
     text-align: center;
     --background: #1D5D9B;
@@ -36,4 +36,5 @@ ion-toolbar{
 }
 ion-title{
     color: white;
+    font-size: x-large;
 }

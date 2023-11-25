@@ -13,7 +13,6 @@ export class RestablecerPage implements OnInit {
 
   correo: string = "";
 
-
   constructor(private router: Router,
               private helper: HelperService,
               private auth: AngularFireAuth,
@@ -38,8 +37,6 @@ export class RestablecerPage implements OnInit {
       await this.helper.showAlert("Correo inválido, por favor intente nuevamente","Error");
 
     }
-
-    
 
   }
   volver(){

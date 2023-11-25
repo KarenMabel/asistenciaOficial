@@ -22,8 +22,6 @@ export class ScanPage implements OnInit {
               private auth:AngularFireAuth
               ) { }
 
-  
-
   ngOnInit() {
   }
   
@@ -38,13 +36,8 @@ export class ScanPage implements OnInit {
       }
       const parametro = {dataQr:this.asistencia};
       await this.helper.showModal(ConfirmacionPage,parametro);
-      console.log("11111",JSON.parse(scanQr));
-    
-    
+      
     }
-
-    
-    
   }
 
   volver(){

@@ -3,8 +3,7 @@ import { Router } from '@angular/router';
 import { HelperService } from 'src/app/services/helper.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-
-
+import { Geolocation } from '@capacitor/geolocation';
 
 @Component({
   selector: 'app-alumno',
@@ -13,10 +12,10 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 })
 export class AlumnoPage implements OnInit {
 
- // parametroAlumno:string | undefined;
   alumno:any;
   alumnoFiltro:any;
-  
+  latitude: number | undefined;
+  longitude: number | undefined;
 
   constructor(private router:Router,
               private helper:HelperService,
@@ -25,22 +24,23 @@ export class AlumnoPage implements OnInit {
 
   ngOnInit() {
     this.mostrarUsuario();
-    
-
+    this.geolocalizar();
   }
 
-    async mostrarUsuario(){
+  async mostrarUsuario(){
     this.alumno = await this.storage.getUser();
     const tokenAlumno = await this.auth.currentUser;
-    console.log("token",tokenAlumno?.email);
-
-
-   
-    
     this.alumnoFiltro = this.alumno.filter((e: { correo:string; }) => e.correo == tokenAlumno?.email);
-    
   }
 
+
+  async geolocalizar(){
+    
+      const coordinates = await Geolocation.getCurrentPosition();
+      this.latitude = coordinates.coords.latitude;
+      this.longitude = coordinates.coords.longitude;
+      
+  }
   
 
   volver(){
@@ -54,5 +54,5 @@ export class AlumnoPage implements OnInit {
       this.router.navigateByUrl("login");
     }
 
-}
+  }
 }

@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.alvarezLeon.app',
-  appName: 'ionic-karenMabel-Asistencia',
+  appId: 'cl.asistenciaOficial.app',
+  appName: 'asistenciaOfical',
   webDir: 'www',
   server: {
     androidScheme: 'https'

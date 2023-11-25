@@ -3,22 +3,22 @@
 ion-card{
     background-color:   #75C2F6;
     text-align: center;
-    margin-top: 60px;
+    margin-top: 80px;
     color:white;
     width: auto;
-    font-family: letras;
+    font-family: donuts;
     
 }
 
 ion-card-title{
     color: white ;
-    font-family: letras;
+    font-family: donuts;
     font-size: xx-large;
 }
 ion-card-header{
     text-align: center;
     color:white ;
-    font-family: letras;
+    font-family: donuts;
 }
 .log{
     color:white;
@@ -34,11 +34,11 @@ ion-card-header{
 }
 
 ion-input{
-    font-family: letras;
+    font-family: donuts;
 }
 
 ion-button{
-    font-family: letras;
+    font-family: donuts;
 }
 ion-content{
     --background: #FBEEAC;
@@ -47,10 +47,11 @@ ion-toolbar{
     --background: #1D5D9B;
 }
 ion-img{
-    width: 500px;
-    height: 50px;
-    margin-right: 500px;
-    margin-left: 80px;
+    width: 400px;
+    height: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 1px;
 }
 
 

@@ -11,10 +11,9 @@
   <ion-card>
     <ion-card-header>
       <ion-card-title>¿Has olvidado tu contraseña?</ion-card-title>
-      <h6>Por favor, ingresa tu correo electrónico usado en el registro para restablecer tu contraseña</h6>
-
     </ion-card-header>
     <ion-card-content>
+      <h6>Por favor, ingresa tu correo electrónico usado en el registro para restablecer tu contraseña</h6>
       <ion-input [(ngModel)]="correo" label="Correo: " label-placement="floating" fill="outline" placeholder="Ingrese su correo"></ion-input>
       <br>
       <ion-button (click)="btnRestablecer()" color="secondary" shape="round">Restablecer tu contraseña</ion-button>
@@ -22,8 +21,6 @@
       <br>
       
     </ion-card-content>
-
-    
   </ion-card>
 </ion-content>
 

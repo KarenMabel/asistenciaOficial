@@ -2,10 +2,11 @@
   <ion-toolbar>
     <ion-button class="btn_volver" (click)="volver()" color="secondary" slot="start">
       <ion-icon name="arrow-back-circle-outline"></ion-icon>
-    </ion-button>
- <ion-img src="/assets/img/vivo douc.png"></ion-img>
-  <ion-button (click)="cerrarSesion()" color="secondary" slot="end">
-  Cerrar Sesión</ion-button>
+    </ion-button>
+    <ion-img src="/assets/img/vivo douc.png"></ion-img>
+    <ion-button (click)="cerrarSesion()" color="secondary" slot="end">
+      Cerrar Sesión
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
@@ -13,13 +14,27 @@
 
   <ion-card *ngFor="let e of alumnoFiltro" color="secondary">
     <div class="container">
-     
       
-        <h1>{{ e.correo }}</h1>
-        <ion-avatar slot="end">
-          <img class="img_person" alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
-        </ion-avatar>
-      
+      <h1>{{ e.correo }}</h1>
+      <ion-avatar slot="end">
+        <img class="img_person" alt="Silhouette of a person's head"
+          src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>
+
     </div>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      Coordenadas de Geolocalización
+    </ion-card-header>
+    <ion-card-content>
+
+      <ion-label>Latitud:</ion-label>
+      <ion-text>{{ latitude }}</ion-text>
+      <br>
+      <ion-label>Longitud:</ion-label>
+      <ion-text>{{ longitude }}</ion-text>
+
+    </ion-card-content>
   </ion-card>
 </ion-content>

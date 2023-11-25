@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ionic-karenMabel-Asistencia</string>
+    <string name="title_activity_main">ionic-karenMabel-Asistencia</string>
+    <string name="package_name">com.alvarezLeon.app</string>
+    <string name="custom_url_scheme">com.alvarezLeon.app</string>
+</resources>

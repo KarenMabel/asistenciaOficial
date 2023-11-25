@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AngularFireAuthGuard, redirectUnauthorizedTo } from '@angular/fire/compat/auth-guard';
 
 const redireccionLogin = () => redirectUnauthorizedTo(['login']);
+const redireccionRegistrar = () => redirectUnauthorizedTo(['registrar']);
 
 const routes: Routes = [
   {
@@ -34,31 +35,19 @@ const routes: Routes = [
   },
   {
     canActivate:[AngularFireAuthGuard],
-    data:{authGuardPipe: redireccionLogin},
+    data:{authGuardPipe: redireccionRegistrar},
     path: 'scan',
     loadChildren: () => import('./pages/scan/scan.module').then( m => m.ScanPageModule)
   },
   {
-    canActivate:[AngularFireAuthGuard],
-    data:{authGuardPipe: redireccionLogin},
     path: 'confirmacion',
     loadChildren: () => import('./modal/confirmacion/confirmacion.module').then( m => m.ConfirmacionPageModule)
   },
   {
-    canActivate:[AngularFireAuthGuard],
-    data:{authGuardPipe: redireccionLogin},
-    path: 'reporte',
+    path: 'reporte/:nombreUsuario',
     loadChildren: () => import('./pages/reporte/reporte.module').then( m => m.ReportePageModule)
   },
   {
-    canActivate:[AngularFireAuthGuard],
-    data:{authGuardPipe: redireccionLogin},
-    path: 'asignatura',
-    loadChildren: () => import('./pages/asignatura/asignatura.module').then( m => m.AsignaturaPageModule)
-  },
-  {
-    canActivate:[AngularFireAuthGuard],
-    data:{authGuardPipe: redireccionLogin},
     path: 'alumno',
     loadChildren: () => import('./pages/alumno/alumno.module').then( m => m.AlumnoPageModule)
   },
