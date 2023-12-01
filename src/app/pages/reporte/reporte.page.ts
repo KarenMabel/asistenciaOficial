@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import { HelperService } from 'src/app/services/helper.service';
 import { StorageService } from 'src/app/services/storage.service';
 
 
@@ -20,10 +21,14 @@ export class ReportePage implements OnInit {
 
   constructor(private router: Router,
               private storage:StorageService,
-              private auth:AngularFireAuth) { }
+              private auth:AngularFireAuth,
+              private helper:HelperService) { }
 
   ngOnInit() {
     this.infoRamos();
+    this.storage.getAsistencia();
+    
+    
     
     
     
@@ -32,13 +37,10 @@ export class ReportePage implements OnInit {
 
   async infoRamos(){
    this.asistencia = await this.storage.getAsistencia();
-   this.alumno = await this.storage.getUser();
-   const tokenAlumno = await this.auth.currentUser;
-   var alumnoFiltro = await this.alumno.filter((e: { correo:string; }) => e.correo == tokenAlumno?.email);
-   if (alumnoFiltro == this.auth.currentUser) {
-     await this.storage.getAsistencia();
-     return;
-  }  
+   if (this.asistencia == "") {
+      await this.helper.showAlert("Usted no ha registrado asistencias","Mensaje");
+      return;
+    }
 
   }
 
